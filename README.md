@@ -45,4 +45,10 @@ services: // sammelt alle benötigten services
       - mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root // setzen einer environment Variable
-````
+```
+
+## ADD vs COPY
+Add erlaubt auch URLs, allerdings ist es best-practise copy wann immer es möglich ist zu benutzen, da sein Verhalten vorhersehbarer ist (nicht, dass plötzlich irgendetwas fremdes kopiert wird)
+
+## RUN vs CMD vs ENTRYPOINT
+http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
