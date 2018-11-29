@@ -1,0 +1,28 @@
+version: '1.0'
+
+services:
+  wildfly:
+    build: wildfly
+    ports:
+      - 8080:8080
+      - 9990:9990
+    depends_on:
+      - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  www:
+    build: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/www:/usr/share/nginx/html
+    depends_on:
+      - wildfly
+  mysql:
+    build: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root

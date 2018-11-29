@@ -29,4 +29,20 @@ Diskutieren Sie Probleme, wie das Warten auf die Datenbank
 Laden Sie Ihr Arbeitsergbnis in Dockerhub hoch und geben SIe die Koordinaten im README an
 
 # Notizen
-Das hinzufügen eines zusätzlichen apt Repository zum installieren von jdk10 ist nicht gelungen, darum wird jdk1.8 verwendet.
+Das Hinzufügen eines zusätzlichen apt Repository zum installieren von jdk10 ist nicht gelungen, darum wird jdk1.8 verwendet.
+
+Die vorgegebene docker-compose.yml ist zu lange und wurde abgespeckt auf das nötigste.
+
+## docker-compose.yml
+```
+services: // sammelt alle benötigten services
+  wildfly:
+    build: wildfly 	// der Ordner in dem das dockerfile gebuildet wird
+    ports: 		// freigegebene Ports
+      - 8080:8080	// Rest
+      - 9990:9990	// Managerconsole
+    depends_on: 	// wildfly wird erst nach mysql gestartet
+      - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root // setzen einer environment Variable
+````
