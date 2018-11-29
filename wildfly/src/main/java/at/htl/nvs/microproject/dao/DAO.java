@@ -9,7 +9,7 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Stateless
-public class DAO<T> {
+public class DAO {
     @PersistenceContext
     EntityManager em;
 
@@ -47,5 +47,13 @@ public class DAO<T> {
 
     public void add(Section s) {
         em.persist(s);
+    }
+
+    public void update(Item i) {
+        em.merge(i);
+    }
+
+    public void update(Section s) {
+        em.merge(s);
     }
 }
