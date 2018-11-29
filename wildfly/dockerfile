@@ -6,6 +6,6 @@ RUN apt-get update && \
   apt-get install -y openjdk-8-jre && \
   apt-get install -y mysql-client
 
-COPY ./target/*.jar /opt/server.jar
+COPY ./target/microprofile-thorntail.jar /opt/server.jar
 
-CMD [java -jar /opt/server.jar]
+CMD java -jar /opt/server.jar
