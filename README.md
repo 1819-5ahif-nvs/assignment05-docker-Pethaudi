@@ -27,3 +27,6 @@ Diskutieren Sie Probleme, wie das Warten auf die Datenbank
 ## Upload in dockerhub
 
 Laden Sie Ihr Arbeitsergbnis in Dockerhub hoch und geben SIe die Koordinaten im README an
+
+# Notizen
+Das hinzufügen eines zusätzlichen apt Repository zum installieren von jdk10 ist nicht gelungen, darum wird jdk1.8 verwendet.
