@@ -2,6 +2,7 @@ package at.htl.nvs.microproject.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @NamedQueries({
@@ -13,9 +14,12 @@ public class Section implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    @OneToMany
+    private List<Item> items;
 
-    public Section(String name) {
+    public Section(String name, List<Item> items) {
         this.name = name;
+        this.items = items;
     }
 
     public Section() {
@@ -35,5 +39,13 @@ public class Section implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 }
