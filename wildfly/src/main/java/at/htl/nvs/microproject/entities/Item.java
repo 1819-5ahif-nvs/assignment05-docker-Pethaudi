@@ -1,12 +1,13 @@
 package at.htl.nvs.microproject.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Item.getAll", query = "select i from Item i"),
+        @NamedQuery(name = "Item.getById", query = "select i from Item i where i.id = :id")
+})
 public class Item implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
