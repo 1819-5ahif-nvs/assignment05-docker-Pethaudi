@@ -54,6 +54,5 @@ Add erlaubt auch URLs, allerdings ist es best-practise copy wann immer es mögli
 http://goinbigdata.com/docker-run-vs-cmd-vs-entrypoint/
 
 ## docker-compose options
-
 docker-compose down			// schließt und löscht alles was von up erzeugt wurde
 docker-compose up --build	// erstellt und startet container --build gibt an, dass ein image erzeugt wird

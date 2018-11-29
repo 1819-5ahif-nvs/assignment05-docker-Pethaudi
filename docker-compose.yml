@@ -1,4 +1,4 @@
-version: '1.0'
+version: '2.0'
 
 services:
   wildfly:
@@ -22,7 +22,5 @@ services:
     build: mysql
     ports:
       - 3306:3306
-    volumes:
-      - mysql_data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
